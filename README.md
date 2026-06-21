@@ -40,7 +40,7 @@ That's it — restart your client and the tools below are available.
 | --- | --- |
 | `lookup_area_code` | Country, state/province, cities, time zone, current local time, overlays, nearby codes |
 | `lookup_phone_number` | Parse/validate a NANP number → area code, region, local time, E.164 |
-| `lookup_carrier` | Assigned carrier, line type (wireless/landline), and rate center for a number's NPA-NXX block (block-allocation data, **not** live/ported; major-metro coverage) |
+| `lookup_carrier` | Assigned carrier, line type (wireless/landline), and rate center for a number's NPA-NXX block (block-allocation data, **not** live/ported; covers nearly every US/Canada code) |
 | `area_codes_for_city` | Area codes serving a city (optionally disambiguated by state) |
 | `area_codes_for_state` | Every area code in a US state or Canadian province |
 | `is_scam_area_code` | Whether an area code is associated with scams + spoofing context |
