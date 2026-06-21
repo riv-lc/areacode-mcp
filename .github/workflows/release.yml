@@ -1,0 +1,36 @@
+name: Publish to npm
+
+# Publishes @riv-lc/areacode-mcp to the PUBLIC npmjs.com registry whenever a
+# version tag (v1.2.3) is pushed. GitHub is only the trigger/CI here — the
+# package lives on npmjs.com so `npx @riv-lc/areacode-mcp` works for everyone.
+#
+# Setup (once):
+#   1. Publish manually the first time to claim the name (see README / notes).
+#   2. Create an npm "Automation" access token (npmjs.com → Access Tokens) and
+#      add it to this repo: Settings → Secrets and variables → Actions →
+#      New repository secret → name it NPM_TOKEN.
+#   3. Release: `npm version patch && git push --follow-tags`.
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: read
+  id-token: write # required for npm provenance
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
