@@ -67,6 +67,17 @@ server.registerTool(
 );
 
 server.registerTool(
+  "lookup_carrier",
+  {
+    title: "Look up a number's carrier (assigned block)",
+    description:
+      "Look up the carrier, line type (wireless/landline), and rate center that a US/Canada number's NPA-NXX block was assigned to. Based on public block-allocation data — NOT a live lookup: if the number was ported the current carrier differs, and coverage currently spans major metros (uncovered area codes return covered:false). Not for caller identity, fraud, or FCRA decisions.",
+    inputSchema: { number: z.string().describe('A US/Canada phone number, e.g. "212-555-0143".') },
+  },
+  ({ number }) => api(`/carrier/${enc(number)}`),
+);
+
+server.registerTool(
   "area_codes_for_city",
   {
     title: "Area codes for a city",
