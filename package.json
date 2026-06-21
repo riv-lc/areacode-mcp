@@ -1,0 +1,50 @@
+{
+  "name": "@riv-lc/areacode-mcp",
+  "version": "0.1.0",
+  "description": "North American (NANP) area-code & phone-number intelligence for AI agents — an MCP server backed by areacode.fyi.",
+  "type": "module",
+  "bin": {
+    "areacode-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node dist/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "modelcontextprotocol",
+    "area-code",
+    "nanp",
+    "phone-number",
+    "telephony",
+    "claude",
+    "ai-agents",
+    "areacode.fyi"
+  ],
+  "license": "MIT",
+  "author": "Reindex Ventures",
+  "homepage": "https://areacode.fyi",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riv-lc/areacode-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/riv-lc/areacode-mcp/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "typescript": "^6.0.3"
+  }
+}
