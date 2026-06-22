@@ -1,0 +1,15 @@
+startCommand:
+  type: stdio
+  command: npx
+  args:
+    - -y
+    - "@riv-lc/areacode-mcp"
+
+configSchema:
+  type: object
+  properties:
+    AREACODE_API_BASE:
+      type: string
+      description: Optional API base URL. Defaults to https://areacode.fyi
+      default: https://areacode.fyi
+  additionalProperties: false

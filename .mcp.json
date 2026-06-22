@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "areacode": {
+      "command": "npx",
+      "args": ["-y", "@riv-lc/areacode-mcp"]
+    }
+  }
+}
