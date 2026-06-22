@@ -37,6 +37,16 @@ That's it — restart your client and the tools below are available.
 Published on the **official MCP Registry** as `io.github.riv-lc/areacode-mcp`, and
 on [npm](https://www.npmjs.com/package/@riv-lc/areacode-mcp).
 
+### Remote (hosted) — for ChatGPT, Claude.ai, and web clients
+
+No install. Add the hosted server as a connector URL — same 8 tools, no key:
+
+```
+https://mcp.areacode.fyi/mcp
+```
+
+(legacy SSE clients: `https://mcp.areacode.fyi/sse`)
+
 ## Tools
 
 | Tool | What it does |
