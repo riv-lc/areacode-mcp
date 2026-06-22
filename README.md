@@ -59,8 +59,8 @@ https://mcp.areacode.fyi/mcp
 | `lookup_carrier` | Assigned carrier, line type (wireless/landline), and rate center for a number's NPA-NXX block (block-allocation data, **not** live/ported; covers nearly every US/Canada code) |
 | `area_codes_for_city` | Area codes serving a city (optionally disambiguated by state) |
 | `area_codes_for_state` | Every area code in a US state or Canadian province |
-| `is_scam_area_code` | Whether an area code is associated with scams + spoofing context |
-| `check_number_reputation` | Unverified, crowd-sourced community signal (low / mid / high) for a number |
+| `is_scam_area_code` | Scam/spoofing context for an area code + an aggregate of FTC Do Not Call complaints filed about numbers using that code |
+| `check_number_reputation` | Unverified community signal (low / mid / high) **plus public FTC Do Not Call complaint data** (count, % robocalls, top subject) for a number |
 | `explain_area_code_topic` | Source-backed explainers: neighbor spoofing, overlays vs splits, toll-free, area-code-vs-country-code, temporary numbers |
 
 ## Example prompts

@@ -111,7 +111,7 @@ server.registerTool(
   {
     title: "Is an area code a scam?",
     description:
-      "Explain whether an area code is associated with scams. An area code is never a scam by itself; this returns that context plus spoofing notes — caller ID can be faked, so judge calls by what they ask for, not the area code.",
+      "Explain whether an area code is associated with scams. An area code is never a scam by itself; returns that context + spoofing notes, PLUS an aggregate of public FTC Do Not Call complaints about specific numbers shown with that code (how many flagged numbers, total complaints, top subjects, worst offenders).",
     inputSchema: { code: z.string().describe('A 3-digit area code, e.g. "702".') },
   },
   ({ code }) => api(`/scam/${enc(code)}`),
@@ -120,9 +120,9 @@ server.registerTool(
 server.registerTool(
   "check_number_reputation",
   {
-    title: "Check a number's community reputation",
+    title: "Check a number's community + FTC spam signal",
     description:
-      "Return the UNVERIFIED, crowd-sourced community signal for a US/Canada number from areacode.fyi: 'low' (people have looked it up), 'mid'/'high' (it has user reports). Caller ID can be spoofed — this is never proof a specific number is fraudulent.",
+      "Spam signal for a US/Canada number from areacode.fyi: the UNVERIFIED crowd-sourced community signal ('low' = looked up, 'mid'/'high' = user reports) PLUS public FTC Do Not Call complaint data when present (complaint count, % robocalls, top subject, date range). Caller ID can be spoofed — none of this proves a number is currently fraudulent.",
     inputSchema: { number: z.string().describe('A US/Canada phone number, e.g. "702-555-0199".') },
   },
   ({ number }) => api(`/reputation/${enc(number)}`),
