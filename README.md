@@ -34,6 +34,9 @@ Run it with `npx` (no install needed) — add it to your client's MCP config.
 
 That's it — restart your client and the tools below are available.
 
+Published on the **official MCP Registry** as `io.github.riv-lc/areacode-mcp`, and
+on [npm](https://www.npmjs.com/package/@riv-lc/areacode-mcp).
+
 ## Tools
 
 | Tool | What it does |
