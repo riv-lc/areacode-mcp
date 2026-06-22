@@ -2,6 +2,9 @@
 
 **North American (NANP) area-code & phone-number intelligence for AI agents.**
 
+[![smithery badge](https://smithery.ai/badge/riv-lc/area-code)](https://smithery.ai/servers/riv-lc/area-code)
+[![npm](https://img.shields.io/npm/v/@riv-lc/areacode-mcp)](https://www.npmjs.com/package/@riv-lc/areacode-mcp)
+
 An [MCP](https://modelcontextprotocol.io) server that gives Claude, Cursor, and
 other agents a small, trusted reference for US & Canada phone numbering — area
 codes, NANP validation, local time, city/state coverage, overlays, and
