@@ -3,7 +3,7 @@
   "name": "io.github.riv-lc/areacode-mcp",
   "title": "AreaCode.fyi MCP Server",
   "description": "North American (NANP) area-code & phone-number intelligence for AI agents, by areacode.fyi.",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": {
     "url": "https://github.com/riv-lc/areacode-mcp",
     "source": "github"
@@ -13,7 +13,7 @@
     {
       "registryType": "npm",
       "identifier": "@riv-lc/areacode-mcp",
-      "version": "0.2.2",
+      "version": "0.2.3",
       "transport": {
         "type": "stdio"
       }

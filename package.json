@@ -1,6 +1,6 @@
 {
   "name": "@riv-lc/areacode-mcp",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "North American (NANP) area-code & phone-number intelligence for AI agents — an MCP server backed by areacode.fyi.",
   "mcpName": "io.github.riv-lc/areacode-mcp",
   "type": "module",
