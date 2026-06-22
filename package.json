@@ -24,6 +24,7 @@
     "release": "npm version patch",
     "release:minor": "npm version minor",
     "release:major": "npm version major",
+    "version": "node scripts/sync-server-version.mjs && git add server.json",
     "postversion": "git push --follow-tags"
   },
   "keywords": [
