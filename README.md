@@ -42,7 +42,7 @@ on [npm](https://www.npmjs.com/package/@riv-lc/areacode-mcp).
 
 ### Remote (hosted) — for ChatGPT, Claude.ai, and web clients
 
-No install. Add the hosted server as a connector URL — same 8 tools, no key:
+No install. Add the hosted server as a connector URL — the same 10 tools, no key:
 
 ```
 https://mcp.areacode.fyi/mcp
@@ -62,6 +62,8 @@ https://mcp.areacode.fyi/mcp
 | `is_scam_area_code` | Scam/spoofing context for an area code + an aggregate of FTC Do Not Call complaints filed about numbers using that code |
 | `check_number_reputation` | Unverified community signal (low / mid / high) **plus public FTC Do Not Call complaint data** (count, % robocalls, top subject) for a number |
 | `explain_area_code_topic` | Source-backed explainers: neighbor spoofing, overlays vs splits, toll-free, area-code-vs-country-code, temporary numbers |
+| `lookup_short_code` | Who texts from a US SMS short code: owner, what the texts are, opt-out, impersonation risk, and the owner's own source page (codes verified against owner documentation; an unlisted code is unverified, not a scam) |
+| `lookup_ocn` | The carrier behind an OCN (carrier company code), or a carrier's OCNs by name, with company type, area codes and block count |
 
 ## Example prompts
 

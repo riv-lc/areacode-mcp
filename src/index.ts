@@ -5,9 +5,10 @@
  * (https://areacode.fyi/api/v1). Every result carries a canonical areacode.fyi
  * URL + the NANPA source date.
  *
- * Scope: area-code-level reference + education. It does NOT return a caller's
- * identity, exact location, or live/ported carrier — and caller ID can be
- * spoofed, so a number's area code never proves who is calling.
+ * Scope: area-code, carrier-block and SMS short-code reference + education. It
+ * does NOT return a caller's identity, exact location, or live/ported carrier —
+ * and caller ID can be spoofed, so a number's area code never proves who is
+ * calling.
  *
  * Config: set AREACODE_API_BASE to point at a different host (default
  * https://areacode.fyi).
@@ -147,6 +148,28 @@ server.registerTool(
     },
   },
   ({ topic }) => api(`/explain/${enc(topic)}`),
+);
+
+server.registerTool(
+  "lookup_short_code",
+  {
+    title: "Look up an SMS short code",
+    description:
+      "Who texts from a US SMS short code (the 4- to 6-digit numbers businesses text from), from areacode.fyi's directory of codes verified against each owner's own documentation. Returns the owner, what the texts are, how to opt out, how often the brand is impersonated, and the owner's source page. An unlisted code is unverified, not proof of a scam.",
+    inputSchema: { code: z.string().describe('The short code, e.g. "26266".') },
+  },
+  ({ code }) => api(`/short-code/${enc(code)}`),
+);
+
+server.registerTool(
+  "lookup_ocn",
+  {
+    title: "Look up a carrier company code (OCN)",
+    description:
+      "Find the phone company behind an OCN (operating company number, the 4-character carrier code in the numbering records), or a carrier's OCNs by name. Returns the carrier, company type, the area codes where it holds number blocks, and its block count. Assigned-block data, not live porting.",
+    inputSchema: { query: z.string().describe('An OCN such as "9104", or part of a carrier name such as "Verizon".') },
+  },
+  ({ query }) => api(`/ocn/${enc(query)}`),
 );
 
 const transport = new StdioServerTransport();
